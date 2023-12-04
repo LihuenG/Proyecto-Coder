@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<br>
+<br>
+
+<form action='/clientes/cliente_nuevo/' method="post">
+    {% csrf_token %}
+    <p> Nombre de la empresa: <input type = "text" name="nombre">
+    <p> Email: <input type = "email" name="email">
+    <p> Numero de CUIT: <input type = "number" name="nro_cuit">
+    <p> Numero de Cliente: <input type = "number" name="numero_cliente">
+    <br>
+    <input type = "submit" value="Enviar">
+ </form>
+
+<br>
+<br>
+
+{% endblock %}

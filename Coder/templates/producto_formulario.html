@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<br>
+<br>
+
+<form action='/clientes/producto/' method="post">
+    {% csrf_token %}
+    <p> Nombre: <input type = "text" name="nombre">
+    <p> Descripcion: <input type = "text" name="descripcion">
+    <p> Stock: <input type = "number" name="cantidad_en_stock">
+    <br>
+    <input type = "submit" value="Enviar">
+ </form>
+
+<br>
+<br>
+
+{% endblock %}

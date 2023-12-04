@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<br>
+<br>
+
+<form action='/clientes/envio/' method="post">
+    {% csrf_token %}
+    <p> Direccion: <input type = "text" name="direccion">
+    <p> Localidad: <input type = "text" name="localidad">
+    <p> Telefono: <input type = "number" name="telefono">
+    <p> Fecha de Envio: <input type = "date" name="fecha_envio">
+    <br>
+    <input type = "submit" value="Enviar">
+ </form>
+
+<br>
+<br>
+
+{% endblock %}
