@@ -58,3 +58,17 @@ def envio(request):
         return render(request, "index.html")
     
     return render(request, 'envio_formulario.html')  
+
+def mostrar_productos(request):    
+    lista_productos = Producto.objects.POST()
+    
+    return render(request, 'lista_productos.html', lista_productos)
+
+def busqueda_en_bd(request):
+    if request.GET.get("nombre", False):
+        busqueda = request.GET["nombre"]
+        lista_productos = Producto.objects.filter(nombre__icontains=busqueda)
+        
+        return render(request, 'busqueda.html', {'lista': lista_productos})
+    
+    return render(request, 'busqueda.html')  
